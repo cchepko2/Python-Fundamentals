@@ -28,6 +28,7 @@ index = pirates_phrase.lower().find("the", index+1)
 print('\nIndex of 2md "the" is at ', index)
 print(pirates_phrase[15])
 
+
 print("\n\n\n")
 
 pirates_phrase = "The pirates of the Caribbean"
