@@ -16,6 +16,8 @@ Algorithm Steps:
             print piglatin line by joining words using join method
 '''
 
+import sys
+
 def piglatin(word: str):
     '''
     Converts a word into piglatin and returns that string
@@ -33,14 +35,17 @@ def piglatin(word: str):
             index+=1
     return word
 
-while(True):
-    try:
-        phrase = input()
-    except EOFError:
+for words in sys.stdin:
+    if not words:
         break
-    words = input().split()
+    #try:
+    #    phrase = input()
+    #except EOFError:
+    #    break
+    translation = []
+
+    words = words.split()
     for word in words:
-        translation = piglatin(word)
-        print(translation, end=' ')
-    print()
+        translation.append(piglatin(word))
+    print(' '.join(translation))
 
