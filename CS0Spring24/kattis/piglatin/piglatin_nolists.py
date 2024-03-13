@@ -35,18 +35,18 @@ def piglatin(word: str):
             index+=1
     return word
 
-for words in sys.stdin:
-    if not words:
+while(True):  # process on line at a time
+    try:
+        words = input()
+    except EOFError:
         break
-    #try:
-    #    phrase = input()
-    #except EOFError:
-    #    break
-    translated = ""
+    
     words = words.split()
-    for word in words:
-        translated = translated + piglatin(word) + ' '
-    
-    print(translated[0:len(translated)-1]) # ommit extra space at end
-    
 
+    translation = ""
+    for word in words:  #process each word
+        translation = translation + piglatin(word) + ' '
+    
+    print(translation)
+    #print(translation[0:len(translation)-1])  # knock off trailing space
+    #turns out don't need to worry about last space

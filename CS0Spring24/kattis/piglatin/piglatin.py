@@ -22,7 +22,7 @@ def piglatin(word: str):
     '''
     Converts a word into piglatin and returns that string
     '''
-    vowels = ['a','e','i','o','u']
+    vowels = ['a','e','i','o','u','y']
     if(word[0] in vowels):
         word = word + 'yay'
     else:       #it begins with a consonant
