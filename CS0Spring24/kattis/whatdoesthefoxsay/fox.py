@@ -12,18 +12,39 @@ Algorithm Steps (for one test case):
     print(modified phrase)
 '''
 
-phrase = list(input().split())
+import sys
 
-line=input()
-sounds = []
-while(line != "what does the fox say?"):
-    line = line.split()
-    sounds.append(line[-1]) # add sound to list of known sounds
+def whatdoesfoxsay(phrase: list, sounds: list)-> str:
+    for word in sounds:
+        while(word in phrase):
+            phrase.remove(word)
+
+    return ' '.join(phrase)
+
+def collect_input()->tuple:
+    phrase = list(input().split())
+
     line=input()
+    sounds = []
+    while(line != "what does the fox say?"):
+        line = line.split()
+        sounds.append(line[-1]) # add sound to list of known sounds
+        line=input()
+    
+    return phrase, sounds
 
-print(sounds)
-for word in sounds:
-    while(word in phrase):
-        phrase.remove(word)
+def test():
+    phrase = ["toot", "boop", "caw"]
+    sounds = ["toot", "boop"]
+    assert whatdoesfoxsay(phrase, sounds) == "caw"
+    print("All tests passed!", file=sys.stderr)
 
-print(' '.join(phrase))
+def main():
+    num_tests = int(input())
+    for _ in range(num_tests):
+        phrase, sounds = collect_input()
+        print(whatdoesfoxsay(phrase, sounds))
+
+if __name__ == "__main__":
+    test()
+    main()
