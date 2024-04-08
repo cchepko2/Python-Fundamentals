@@ -1,6 +1,6 @@
 years = []
-for i in range(1024):
-    years.append(str(999+i))
+for i in range(42):
+    years.append(str(1982+i))
 
 years2 = years.copy()
 

@@ -11,6 +11,27 @@ Algorithm steps:
         input country and trip_num
         output year of trip_num
 '''
+import sys
+
+def test():
+    trips = {'USA':[1999,999], 'Australia':[2005]}
+    queries = [('USA','2'),('Australia', '1')]
+
+    assert solution(trips, queries) == '1999\n2005'
+    print("All asserts passed!", file=sys.stderr)
+
+def solution(trips, queries_l):
+
+    ans = []
+
+    for trip in trips:
+        trips[trip].sort()
+
+    for q in queries_l:
+        country, trip_num = q
+        #print(trips[country][int(trip_num)-1])
+        ans.append(f"{trips[country][int(trip_num)-1]}")
+    return '\n'.join(ans)
 
 def main():
     num_trips = int(input())
@@ -22,19 +43,17 @@ def main():
         else:
             trips[country] = [int(year)]
 
-    for trip in trips:
-        trips[trip].sort()
-
     queries = int(input())
     queries_l = []
     for i in range(queries):
         country, trip_num = input().split()
         queries_l.append((country, trip_num))
     
-    for q in queries_l:
-        country, trip_num = q
-        print(trips[country][int(trip_num)-1])
+    ans = solution(trips, queries_l)
+
+    print(ans)
 
 
 if __name__ == '__main__':
+    test()
     main()
