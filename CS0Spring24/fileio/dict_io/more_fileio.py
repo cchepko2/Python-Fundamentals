@@ -41,6 +41,6 @@ else:
 
 with open(f"{my_path}/stats.txt", 'w') as fout:
     if( guess_num > 3):
-        fout.write("You are a terrible guesser.I even gave you a definition, you can't lose!")
+        fout.write("You are a terrible guesser. I even gave you a definition, you can't lose!")
     else:
         fout.write(f"You guessed {word} in {guess_num-1} tries!")
