@@ -1,3 +1,5 @@
+import copy
+
 class Champian:
     def __init__(self, name, health=5, damage=2):
         self.name = name
@@ -27,6 +29,9 @@ def main():
 
     print(f"\n{ralphie.name} and {xander.name} get in an encounter!")
 
+    clone = copy.deepcopy(ralphie)
+    print(clone is ralphie)
+
     while(xander.health >= 0 and ralphie.health >= 0):
         xander.defend(ralphie)
         print(ralphie)
@@ -35,6 +40,8 @@ def main():
         xander.attack(ralphie)
         print(ralphie)
         print(xander)
+    
+    print(clone.health)
 
 
 if __name__ == '__main__':
