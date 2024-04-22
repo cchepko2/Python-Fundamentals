@@ -16,8 +16,8 @@ class Point:
         return (self.x, self.y)
 
 # Create a new surface and window.
-surface_size_x = 1100
-surface_size_y = 700
+surface_size_x = 1280
+surface_size_y = 720
 iterations = 10000
 
 vertices = [(int(surface_size_x/2), 0), (0, surface_size_y-1), (surface_size_x-1, surface_size_y-1)]
