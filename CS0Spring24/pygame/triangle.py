@@ -46,13 +46,23 @@ def gameloop():
             
             
             # Draw stuff
-            red = random.randint(0,255)
-            green = random.randint(0,255)
-            blue = random.randint(0,255)
+            #red = random.randint(0,255)
+            #green = random.randint(0,255)
+            #blue = random.randint(0,255)
 
-            blue= 255 - ((plot_point[0]/surface_size_x)*255)
-            green = (plot_point[1]/surface_size_y)*255
-            red = 0
+            #blue= 255 - ((plot_point[0]/surface_size_x)*255)
+            #green = (plot_point[1]/surface_size_y)*255
+            #red = 0
+            if(plot_point[1]<surface_size_y/3):
+                blue = 255#-(plot_point[1]/surface_size_y)*256
+                green = 255-(plot_point[1]/surface_size_y)*256
+                red = 255-(plot_point[1]/surface_size_y)*256
+            else:
+                blue = 255#-(plot_point[1]/surface_size_y)*256
+                green = 255-(plot_point[1]/surface_size_y)*256/3
+                red = 255-(plot_point[1]/surface_size_y)*256/3
+                blue -= (plot_point[1]/surface_size_y)*256/3
+
             color = (red, green, blue)
 
             main_surface.set_at(plot_point, color) #Plot a pixel at (mid_point[0],mid_point[1])
