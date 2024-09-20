@@ -15,7 +15,8 @@ def solution(hours, minutes):
 
     total_minutes -= 45
 
-    hours = ((total_minutes//60)+24)%24
+    print(total_minutes)
+    hours = (total_minutes//60)
     minutes = total_minutes%60
 
     # if hours less than zero, add 24 to convert to positive time the day before
