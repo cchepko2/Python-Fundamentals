@@ -2,7 +2,7 @@
 Password Validator
 Updated By: Seth Kaufman
 CSCI 110 Lecture
-Date: 25 SEP 2024
+Date: 27 SEP 2024
 
 Build a password validator that:
 - Takes in a string
@@ -14,7 +14,10 @@ Build a password validator that:
 
 Algorithm:
     1. init counters
-    2. 
+    2. create loop to look at each character in string  
+    3. check if each character is an upper, lower, punucation or number
+    4. check if there an error and print out message is the password does not match
+    5. print out error/success message
 """
 import string
 
@@ -38,7 +41,6 @@ def passwordValidator(password:str):
             number_count += 1 
     
     # check if there an error and print out message is the password does not match
-        # Check each condition
     error = ""
     if upper_count < 2:
         error += "Password must contain at least 2 uppercase letters. "
