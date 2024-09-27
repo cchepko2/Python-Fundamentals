@@ -18,23 +18,27 @@ Algorithm:
 """
 import string
 
-def passwordValidator ( password:str ) -> str:
+def passwordValidator(password:str):
+    #create counter trackers for each test case
     upper_count = 0
     lower_count = 0
     puncutation_count = 0
     number_count = 0
-
-    for char in password:
-        if (char in string.ascii_uppercase):
+    
+    # create loop to look at each character in string  
+    for c in password:
+        #check if each character is an upper, lower, punucation or number
+        if (c in string.ascii_uppercase):
             upper_count += 1
-        elif (char in string.ascii_lowercase):
+        elif (c in string.ascii_lowercase):
             lower_count += 1
-        elif (char in string.punctuation): 
+        elif (c in string.punctuation): 
             puncutation_count += 1
-        elif (char in string.digits):
-            number_count += 1
-            
-    # Check each condition
+        elif (c in string.digits):
+            number_count += 1 
+    
+    # check if there an error and print out message is the password does not match
+        # Check each condition
     error = ""
     if upper_count < 2:
         error += "Password must contain at least 2 uppercase letters. "
@@ -47,12 +51,14 @@ def passwordValidator ( password:str ) -> str:
     if len(password) < 10:
         error += "Password must be 10 characters or longer. "
     if len(error) > 0:
-        return error
+        return error 
 
+    # print out success message
     return "Password is valid."
-
+    
+    
 def main():
-    p = input("Provide your password")
+    p = input("Provide your password: ")
     print(passwordValidator(p))
     
 
