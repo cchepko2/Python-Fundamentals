@@ -19,6 +19,7 @@ print(subStringTest)
 ########
 # Using find() and len() to pick pizza out of string
 ########
+lunch = "I ate pizza for lunch."
 targetString = "pizza"
 
 # using find() to get the start of string
