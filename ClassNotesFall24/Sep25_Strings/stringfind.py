@@ -30,12 +30,6 @@ print(beg)
 lenStr = len(targetString)
 print(lenStr)
 
-
-# length of string to slice
-dinner = "I ate pizza for lunch and pizza for dinner."
-endIdx = dinner.rfind(targetString)
-print('rfind',endIdx)
-
 # end of range for slicing
 end = beg + lenStr
 
