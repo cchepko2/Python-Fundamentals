@@ -11,12 +11,7 @@ Algorithm Steps:
             if word begins with vowel (aeiouy) add "yay" to end of word
 
 '''
-
 import sys
-
-def test():
-    assert translate("pig latin") == "igpay atinlay "
-    print("All tests passed!", file = sys.stderr)
 
 def translate(phrase):
     pig_latin = ""
@@ -43,17 +38,18 @@ def translate(phrase):
     return pig_latin
 
 def main():
-    for phrase in sys.stdin:
+
     #while(True):
-        #try:
-        #    phrase = input()
-        #except EOFError:
-        #    break
+    #    sys.stdin()
+    #    try:
+    #        phrase = input()
+    #    except EOFError:
+    #        break
         #phrase = input()
-        
+    for phrase in sys.stdin:    
         # for user testing, if last line is blank end program
-        if(phrase == "\n"):
-            break
+       # if(phrase == ""):
+       #     break
 
         pig_latin = translate(phrase)
 
@@ -63,4 +59,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    test()
