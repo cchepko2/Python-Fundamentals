@@ -1,13 +1,27 @@
-import pygame, math
+import pygame, math, random
 pygame.init()           # prepare the pygame module for use
 
 # Create a new surface and window.
-surface_size = 800
+surface_size = 600
 main_surface = pygame.display.set_mode((surface_size,surface_size))
 my_clock = pygame.time.Clock()
 
+pt1 = (surface_size/2, 0)
+pt2 = (0, surface_size)
+pt3 = (surface_size, surface_size)
+vertices = [pt1, pt2, pt3]
+point = (0,0)
+
+def half_way(point, vertex):
+    x = int((vertex[0]-point[0])//2)
+    y = int((vertex[1]-point[1])//2)
+    return (x,y)
+
 def gameloop():
     run = True
+
+    old_pt = (0,0)
+
     while run:
 
         # Handle evente from keyboard, mouse, etc.
@@ -19,17 +33,21 @@ def gameloop():
                     run = False
 
         # Draw everything
-        main_surface.fill((30, 0, 30)) #fill background color
+        #main_surface.fill((30, 0, 30)) #fill background color
         # Draw stuff
-        color = (0,255,0)
+        color = (0,0,255)
         p1 = (0,0)
         p2 = (surface_size,surface_size)
-        pygame.draw.line(main_surface, color, p1, p2)
+        #pygame.draw.line(main_surface, color, p1, p2)
+        vertex = random.choice(vertices)
+        new_pt = half_way(old_pt, vertex)
+        main_surface.set_at(new_pt, (0,255,0)) #Plot a pixel at (mid_point[0],mid_point[1])
+        old_pt = new_pt
 
         pygame.display.flip() # Put all the drawing up to the display
-        my_clock.tick(120) #Keeps a contant framerate for smoother animation
+       # my_clock.tick(120) #Keeps a contant framerate for smoother animation
         # If you don't include the above line, the loop executes as fast as it can
-
+        
 
 gameloop()
 pygame.quit()
