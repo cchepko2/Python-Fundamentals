@@ -2,7 +2,7 @@ import pygame, math, random
 pygame.init()           # prepare the pygame module for use
 
 # Create a new surface and window.
-surface_size = 600
+surface_size = 800
 main_surface = pygame.display.set_mode((surface_size,surface_size))
 my_clock = pygame.time.Clock()
 
@@ -13,8 +13,8 @@ vertices = [pt1, pt2, pt3]
 point = (0,0)
 
 def half_way(point, vertex):
-    x = int((vertex[0]-point[0])//2)
-    y = int((vertex[1]-point[1])//2)
+    x = int((vertex[0]+point[0])//2)
+    y = int((vertex[1]+point[1])//2)
     return (x,y)
 
 def gameloop():
@@ -41,7 +41,9 @@ def gameloop():
         #pygame.draw.line(main_surface, color, p1, p2)
         vertex = random.choice(vertices)
         new_pt = half_way(old_pt, vertex)
-        main_surface.set_at(new_pt, (0,255,0)) #Plot a pixel at (mid_point[0],mid_point[1])
+        #plot_pt = (new_pt[0]+surface_size//3, new_pt[1]+surface_size//3)
+        plot_pt = (new_pt[0], new_pt[1])
+        main_surface.set_at(plot_pt, (255,255,0)) #Plot a pixel at (mid_point[0],mid_point[1])
         old_pt = new_pt
 
         pygame.display.flip() # Put all the drawing up to the display
