@@ -2,13 +2,14 @@ import pygame, math, random
 pygame.init()           # prepare the pygame module for use
 
 # Create a new surface and window.
-surface_size = 800
-main_surface = pygame.display.set_mode((surface_size,surface_size))
+surface_size_x = 800
+surface_size_y = 800
+main_surface = pygame.display.set_mode((surface_size_x,surface_size_x))
 my_clock = pygame.time.Clock()
 
-pt1 = (surface_size/2, 0)
-pt2 = (0, surface_size)
-pt3 = (surface_size, surface_size)
+pt1 = (surface_size_x/2, 0)
+pt2 = (0, surface_size_y)
+pt3 = (surface_size_x, surface_size_y)
 vertices = [pt1, pt2, pt3]
 point = (0,0)
 
@@ -37,7 +38,7 @@ def gameloop():
         # Draw stuff
         color = (0,0,255)
         p1 = (0,0)
-        p2 = (surface_size,surface_size)
+        p2 = (surface_size_x,surface_size_y)
         #pygame.draw.line(main_surface, color, p1, p2)
         vertex = random.choice(vertices)
         new_pt = half_way(old_pt, vertex)
