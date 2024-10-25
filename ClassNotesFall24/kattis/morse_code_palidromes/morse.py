@@ -12,6 +12,7 @@ Alogorithm Steps:
         print(0)
 '''
 
+import sys
 import string
 
 # Dictionary representing the morse code chart
@@ -31,9 +32,8 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '?':'..--..', '/':'-..-.', '-':'-....-',
                     '(':'-.--.', ')':'-.--.-'}
 
-def main():
-    phrase = input().upper()
-
+def translate(phrase):
+    phrase = phrase.upper()
     translated = ""
     if phrase != "":
         for character in phrase:
@@ -42,8 +42,22 @@ def main():
             if character in (string.ascii_uppercase+string.digits):
                 translated += MORSE_CODE_DICT[character.upper()]
         
-        #print(translated)
+        return translated    
+    else:
+        return translated
 
+def test():
+    assert translate("SOS") == "...---..."
+    assert translate("Hello") == "......-...-..---"
+
+    print("All tests passed!", file=sys.stderr)
+
+
+def main():
+    phrase = input()
+
+    translated = translate(phrase)
+    if( translated != ""):
         if( translated == translated[::-1] and translated != ""):
             print(1)
         else:
@@ -52,4 +66,5 @@ def main():
         print(0)
 
 if __name__ == '__main__':
+    test()
     main()
