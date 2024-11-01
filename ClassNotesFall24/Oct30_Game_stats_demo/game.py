@@ -1,4 +1,4 @@
-import quick_read_words as read_words
+import word_and_save_game as read_words
 import random
 
 def run_game(words):
