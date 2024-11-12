@@ -5,6 +5,7 @@ import pyautogui
 # # Init Cursor Location
 x, y = pyautogui.size()
 print(x, y)
+print(pyautogui.position())
 pyautogui.moveTo(10, 10)
 
 # # Trigger Spotlight Launch
