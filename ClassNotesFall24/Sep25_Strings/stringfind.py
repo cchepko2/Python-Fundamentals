@@ -19,7 +19,6 @@ print(subStringTest)
 ########
 # Using find() and len() to pick pizza out of string
 ########
-lunch = "I ate pizza for lunch."
 targetString = "pizza"
 
 # using find() to get the start of string
@@ -29,12 +28,6 @@ print(beg)
 # length of string to slice
 lenStr = len(targetString)
 print(lenStr)
-
-
-# length of string to slice
-dinner = "I ate pizza for lunch and pizza for dinner."
-endIdx = dinner.rfind(targetString)
-print('rfind',endIdx)
 
 # end of range for slicing
 end = beg + lenStr
