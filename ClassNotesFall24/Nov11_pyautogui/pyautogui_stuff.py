@@ -6,11 +6,11 @@ import pyautogui
 x, y = pyautogui.size()
 print(x, y)
 print(pyautogui.position())
-pyautogui.moveTo(10, 10)
+pyautogui.moveTo(1387, 94)
 
 # # Trigger Spotlight Launch
 # pyautogui.moveTo(1175, None)
-# pyautogui.click()
+pyautogui.click()
 # pyautogui.PAUSE = 3
 
 # # Enter spotlight request & start applications
