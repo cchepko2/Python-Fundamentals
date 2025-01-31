@@ -23,3 +23,7 @@ print(type(d))
 d = float(d)
 print(type(d))
 print(d/2)
+
+str_b = str(b)
+print(b)
+print(str_b)
