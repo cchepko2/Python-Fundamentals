@@ -47,3 +47,4 @@ print(oct(num1))
 print(hex(num1))
 #hexadecimal base 16
 print(hex(15))
+print("Heart ❤️")
