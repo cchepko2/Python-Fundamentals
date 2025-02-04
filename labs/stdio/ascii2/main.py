@@ -22,6 +22,8 @@
     1. Use variables to store art and data
     2. Write a series of print statements to print the data/values to the console, using the .center() method
         to keep the strings centered.
+    
+    Note: You can add more lines or print differt ASCII arts of your choice if you'd like...
 """
 
 print("Welcome to ASCII Art Program...\n")
