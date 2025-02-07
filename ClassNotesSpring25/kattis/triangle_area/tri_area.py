@@ -10,14 +10,15 @@ Algorithm Steps:
     print(area)
 '''
 
-'''number_str = input()
+number_str = input()
 height, base = number_str.split()
 height = int(height)
 base = int(base)
 area = base*height/2
-print(area)'''
+print(area)
 
-
+'''
 # Another version, both are fine
 height, base = list(map(int, input().split()))
 print(height*base/2)
+'''
