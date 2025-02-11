@@ -9,8 +9,11 @@ Algorithm Steps:
 '''
 
 import sys
- 
-print("Enter first line: ", file=sys.stderr)
-line1a, line1b = input().split('|')
 
-print(line1a, line1b)
+# Use file=sys.stderr so print is ignored by Kattis
+#print("Enter first line: ", file=sys.stderr)
+
+line1a, line1b = input().split('|')
+line2a, line2b = input().split('|')
+
+print(line1a+line2a + ' ' + line1b+line2b)
