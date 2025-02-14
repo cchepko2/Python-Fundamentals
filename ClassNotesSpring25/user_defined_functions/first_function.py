@@ -9,17 +9,24 @@ and prints the result.
 # as input
 # returns the output
 
-def add_two(num1, num2):
-    sum = num1+num2
-    return sum
+import sys
+import add_two
 
-# Python 3
-line = input()
-a, b = line.split()
-a = int(a)
-b = int(b)
+def main():
+    print_output = print("Enter two numbers separated by a space: ", file=sys.stderr)
+    print(f"{print_output=}")
+    # Python 3
+    line = input()
+    a, b = line.split()
+    a = int(a)
+    b = int(b)
 
-assert( add_two(1,1) == 2 )
+    #assert( add_two(1,1) == 2 )
 
-a_plus_b = add_two(a ,b)
-print(a_plus_b)
+    a_plus_b = add_two.add_two(a ,b)
+    print(a_plus_b)
+
+    print(f"{a=}, {b=}")
+
+if(__name__ == "__main__"):
+    main()
