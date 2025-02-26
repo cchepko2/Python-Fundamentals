@@ -6,10 +6,10 @@ Write a Python program to solve the Kattis problem called twostones [https://ope
 
 ## Lab Instructions
 
-- Open your CS0Lab-... repo in VS Code
-- Create lab folder **twostones** inside your CS0Lab-... repository
-- Inside the lab folder, create two files: main.py and test_main.py
-- Type the partial code stub provided in main.py and test_main.py files and fix all FIXMEs. (80 points)
+- Open your CS0-... repo in VS Code
+- Inside the lab folder, run "kattis get twostones", this should create a twostones folder
+- Copy the "main.py" file or code into your twostones folder
+- Fix all FIXMEs. (80 points)
 - Follow best programming practices by using proper white spaces, comments, etc.
 
 ```note
@@ -19,13 +19,11 @@ Print as asked: nothing less; nothing more!
 Kattis is a computer program that provides specific input and expects exact output – to a space to give the correct verdict.
 ```
 
-- Run unit test using pytest and create screenshot when all the test cases pass. Install pytest if required. Pick one of the following ways to run pytest.
+- Navigate to your twostones folder in the terminal. Run unit test using kattis test and create screenshot when all the test cases pass.
+- Add 3 additonal test cases. Test all aspects of the solution. (10 points)
 
 ```bash
-  $ pytest --version
-  $ pip install -U pytest
-  $ pytest test_main.py
-  $ python -m pytest test_main.py
+  $ kattis test
 ```
 
 - Test the whole program manually. While testing, provide input using the same format as described in the Input section and shown in input samples.
