@@ -17,12 +17,7 @@ Algorithm Steps:
 
 import sys
 
-def main():
-    print("Enter 4 lines, name, integer a, integer b, and a-b", file=sys.stderr)
-    input() # input name, don't care, so I don't assign it to anything
-    a = int(input())
-    b = int(input())
-    c = int(input())
+def solution(a, b, c):
     a_minus_b = a-b
 
     answer = "VEIT EKKI"
@@ -31,6 +26,25 @@ def main():
             answer = "JEDI"
         else: # one must be positive, so a SITH is involved
             answer = "SITH"
+
+    return answer
+
+def test():
+    # If any tests fail, the program will stop. 
+    # If they pass, the print statement at the end will print
+    assert(solution(20, 10, 10) == "VEIT EKKI")
+    assert(solution(20, 30, 10) == "SITH")
+    assert(solution(20, 30, -10) == "JEDI")
+    print("All tests passed!", file=sys.stderr)
+
+def main():
+    print("Enter 4 lines, name, integer a, integer b, and a-b", file=sys.stderr)
+    input() # input name, don't care, so I don't assign it to anything
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    
+    answer = solution(a,b,c)
     
     print(answer)
 
@@ -38,4 +52,5 @@ def main():
 
 
 if __name__ == "__main__":
+    test()
     main()
