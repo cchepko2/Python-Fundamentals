@@ -11,6 +11,6 @@ for character in word:
 for i in range(len(word)):
     print(word[i])
 
-# floating point arithmatic can be wierd
+# floating point arithmatic can be weird
 #print(2.3 + 5.6)
 
