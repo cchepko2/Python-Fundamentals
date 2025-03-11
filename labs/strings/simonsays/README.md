@@ -1,4 +1,4 @@
-# CS0 Lab - Math
+# CS0 Lab - Simonsays
 
 Possible Points: 100
 
