@@ -11,6 +11,9 @@ Algorithm Steps:
 
 from typing import List
 import sys
+import os
+#from pathlib import Path
+#script_directory_pathlib = Path(__file__).parent.resolve()
 
 def steps_back(heights: List):
     total_steps_taken = 0
@@ -34,15 +37,19 @@ def main():
     number_tests = int(input())
 
     inputs = []
+ #   out_file = open(f"{script_directory_pathlib}/out.txt", 'w')
 
     for i in range(1, number_tests+1): # Starting from count of one, collect number_test sets of numbers
         line_nums = input().split() # Collect line of numbers and split into list
         line_nums = line_nums[1::]  # slice off first number, we don't need it
         line_nums = list(map(int, line_nums))
-        inputs.append(line_nums)
         # Handy function to convert list to number of steps taken back goes here
         steps = steps_back(line_nums)
-        print(i, steps)
+        ans = f"{i} {steps}\n"
+        print(ans, end="")
+  #      out_file.write(ans)
+    
+#    out_file.close()
 
 def test():
     heights = [4,3,2,1]
