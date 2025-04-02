@@ -26,22 +26,31 @@ def solution(sounds: List, known_sounds: List):
 
     return fox_said
 
-def main():
-    sounds = input().split()
-    known_sounds = []
-    while(True):
-        line = input()
-        if line == "what does the fox say?":
-            break
-        else:
-            # append the third word from the line into the list
-            # of known sounds
-            known_sounds.append(line.split()[2])
+def test():
+    swamp_sounds = ["crazy", "meow", "ribbit", "blub", "pow!"]
+    known_sounds = ["meow", "ribbit", "blub"]
+    assert( solution(swamp_sounds, known_sounds) == "crazy pow!")
+    print("All tests passed!", file=sys.stderr)
 
-    fox_said = solution(sounds, known_sounds)
-    print(f"{sounds=}", file=sys.stderr)
-    print(f"{known_sounds=}")
-    print(fox_said)
+def main():
+    num_tests = int(input())
+    for i in range(num_tests):
+        sounds = input().split()
+        known_sounds = []
+        while(True):
+            line = input()
+            if line == "what does the fox say?":
+                break
+            else:
+                # append the third word from the line into the list
+                # of known sounds
+                known_sounds.append(line.split()[2])
+
+        fox_said = solution(sounds, known_sounds)
+        print(f"{sounds=}", file=sys.stderr)
+        print(f"{known_sounds=}", file=sys.stderr)
+        print(fox_said)
 
 if __name__ == '__main__':
     main()
+    test()
