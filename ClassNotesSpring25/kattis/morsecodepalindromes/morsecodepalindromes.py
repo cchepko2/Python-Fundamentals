@@ -23,19 +23,18 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
                     '1':'.----', '2':'..---', '3':'...--',
                     '4':'....-', '5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', '9':'----.',
-                    '0':'-----', ', ':'--..--', '.':'.-.-.-',
-                    '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-'}
+                    '0':'-----'}
 
 import sys
 import string
 
 def translate(phrase: str) -> str:
-    translated = []
+    translated = ''
 
     for letter in phrase:
-        if letter in string.ascii_uppercase:
-            translated.append(MORSE_CODE_DICT[letter])
+        if letter in MORSE_CODE_DICT:
+            #translated.append(MORSE_CODE_DICT[letter])
+            translated += MORSE_CODE_DICT[letter]
 
 
     return ''.join(translated)
@@ -45,8 +44,14 @@ def main():
     phrase = input().upper()
 
     translated = translate(phrase)
+    print(translated, file=sys.stderr)
+    print(translated[::-1], file=sys.stderr)
 
-    print(translated)
+    reversed = translated[::-1]
+    if (translated == reversed) and (translated != ''):
+        print(1)
+    else:
+        print(0)
 
 if __name__ == '__main__':
     main()
