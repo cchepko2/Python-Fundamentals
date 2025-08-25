@@ -38,3 +38,5 @@ print(line1)
 # Note: You can add more lines or print more ASCII arts of your choice if you'd like...
 
 print("\nGood bye...  \n")
+
+print(" (\_/)")
