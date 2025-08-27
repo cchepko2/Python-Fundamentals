@@ -26,9 +26,9 @@ not_rounded = int(not_rounded)
 not_rounded = int(not_rounded+0.5)
 print(f"{not_rounded=}")
 
-hours = 63
-minutes = hours//60   # Does floor division, 
+tot_seconds = 63
+minutes = tot_seconds//60   # Does floor division, 
 #                       only returns whole divider, not remainder
-seconds = hours%60      # Returns the remainder of hours/60
+seconds = tot_seconds%60      # Returns the remainder of hours/60
 
-print(hours, "hours =", minutes, "minutes and", seconds, "seconds.")
+print(tot_seconds, "seconds =", minutes, "minutes and", seconds, "seconds.")
