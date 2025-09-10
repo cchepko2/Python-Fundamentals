@@ -4,6 +4,9 @@ card = '''=====
 |   |
 ====='''
 
+def print_art(art):
+    print(art)
+
 def main():
     print("Hello World")
     print(card)

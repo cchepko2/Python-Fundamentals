@@ -19,6 +19,8 @@ def main():
     print(art.card, end = '')
     print("Same line!")
 
+    art.print_art(art.card)
+
 
 if __name__ == '__main__':
     main()
