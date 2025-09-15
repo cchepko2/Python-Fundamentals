@@ -15,7 +15,7 @@ print(f"{return_val=}")
 side_b = 5
 
 # AVOID this unless you know what you are doing!
-side_a = input
+side_a = input()
 
 side_c = side_a + side_b
 #side_a = input("Enter stuff:")
