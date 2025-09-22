@@ -1,9 +1,18 @@
 import sys
 
+def test():
+    # This will not affect your program if they work
+    ans = solution("Corin")
+    expected = "Thank you, Corin, and farewell!"
+
+    assert ans == expected, f"Expected: {expected}, Actual Output: {ans}"
+    assert solution("") == "Thank you, , and farewell!"
+    assert solution("Ally") == "Thank you, Ally, and farewell!"
+    print("All test passed!", file=sys.stderr)
 
 def main():
-    assert solution("Corin") == "Thank you, Corin, and farewell!"
-
+    
+    test()   # Run my test function
     name_main = input_name()
     answer = solution(name_main)
 
