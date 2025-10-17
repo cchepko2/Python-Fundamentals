@@ -23,5 +23,5 @@ print(txt)
 txt = "{0} is {1:.2f} tall and {0} has blonde hair".format(name, height)
 print(txt)
 
-txt = f"{'Apple':>>}\t{'Price':^}\t{'Weight':<<}"
+txt = f"{'Apple':<16}\t{'Price':^}\t{'Weight':>16}"
 print(txt)
