@@ -25,9 +25,20 @@ species = []
 for line in sys.stdin:
     if line == '':
          break
-    species.append(line)
-print(species[0])
+    species.append(line.strip())
 
+#species.sort()
+
+dict_trees = {}
+for tree in species:
+    if tree in dict_trees:
+          dict_trees[tree] += 1
+    else:
+         dict_trees[tree] = 1
+
+for tree in sorted(dict_trees.keys()):
+     print("{} {:2.6f}".format(tree, dict_trees[tree]/len(species)*100))
+     
 # input collection
 
 #while(True):
