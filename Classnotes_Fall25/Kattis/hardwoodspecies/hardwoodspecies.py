@@ -37,7 +37,8 @@ for tree in species:
          dict_trees[tree] = 1
 
 for tree in sorted(dict_trees.keys()):
-     print("{} {:2.6f}".format(tree, dict_trees[tree]/len(species)*100))
+#for tree in dict_trees:
+     print("{} {:.6f}".format(tree, dict_trees[tree]/len(species)*100))
      
 # input collection
 
