@@ -11,3 +11,7 @@ with open(script_dir+'\\words.txt', 'w') as fout:
     fout.write(str(1))
     fout.write('\n')
     fout.write(str(alist))
+    
+    lines = ["Words", "More words", "Even more words"]
+    lines = '\n'.join(lines)
+    fout.write(lines)
