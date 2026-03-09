@@ -19,8 +19,13 @@ tuple_of_messages = ("a", "oo", ".")
 print(message.endswith('a'))
 print(message.endswith(tuple_of_messages))
 
-words = message.split()
+words = message.split(' ', 3)
 print(words)
+
+words = message.rsplit(' ', 3)
+print(words)
+
+
 for each_word in words:
     print(each_word, end=' ')
 
