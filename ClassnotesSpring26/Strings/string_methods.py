@@ -31,3 +31,7 @@ for each_word in words:
 
 print()
 print(",".join(words))
+
+rand_list = ['H', 'LLO TH', 'R', ' B', 'AUTIFUL WORLD!']
+
+" ".join(rand_list)
